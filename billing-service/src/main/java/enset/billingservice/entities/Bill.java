@@ -22,4 +22,12 @@ public class Bill {
     private Long customerID;
     @Transient
     private Customer customer;
+
+    public double getTotal(){
+        double s = 0;
+        for (ProductItem pi:productItems){
+            s+= pi.getAmount();
+        }
+        return s;
+    }
 }
